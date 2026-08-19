@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>$200,000 Monthly Leaderboard</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, Arial, sans-serif;
+  color: white;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(130,75,255,.25), transparent 40%),
+    radial-gradient(circle at 0% 50%, rgba(100,60,255,.10), transparent 35%),
+    #08080e;
+}
+
+/* HEADER */
+
+.header {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(8,8,14,.75);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 35px rgba(120,70,255,.08);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 21px;
+  font-weight: 950;
+  letter-spacing: 1px;
+  text-shadow:
+    0 0 12px rgba(150,90,255,.7),
+    0 0 30px rgba(120,70,255,.3);
+}
+
+.brand img {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow:
+    0 0 15px rgba(130,80,255,.7),
+    0 0 35px rgba(130,80,255,.3);
+}
+
+/* MAIN */
+
+.container {
+  width: min(1100px, 92%);
+  margin: auto;
+  padding: 65px 0 80px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.eyebrow {
+  color: #a064ff;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-shadow:
+    0 0 10px rgba(160,100,255,.8),
+    0 0 25px rgba(150,90,255,.4);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(34px, 6vw, 62px);
+  font-weight: 950;
+  letter-spacing: -2px;
+  text-shadow:
+    0 0 12px rgba(150,90,255,.6),
+    0 0 35px rgba(120,70,255,.25);
+}
+
+.subtitle {
+  margin-top: 15px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow:
+    0 0 7px white,
+    0 0 18px rgba(255,255,255,.7),
+    0 0 35px rgba(255,255,255,.35);
+}
+
+/* LEADERBOARD */
+
+.board {
+  overflow: hidden;
+  border-radius: 25px;
+  border: 2px solid rgba(160,120,230,.20);
+  background: rgba(16,15,24,.90);
+  box-shadow:
+    0 0 30px rgba(120,70,255,.12),
+    0 0 80px rgba(100,60,255,.06);
+}
+
+.table-head,
+.row {
+  display: grid;
+  grid-template-columns: 135px 1fr 190px 200px;
+  align-items: center;
+}
+
+.table-head {
+  min-height: 95px;
+  padding: 20px 45px;
+  border-bottom: 2px solid rgba(255,255,255,.07);
+  color: #77747e;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.row {
+  min-height: 105px;
+  padding: 15px 45px;
+  border-bottom: 2px solid rgba(255,255,255,.06);
+  box-shadow: inset 0 0 35px rgba(130,80,255,.025);
+  transition: .25s;
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.row:hover {
+  background: rgba(130,80,255,.06);
+  box-shadow:
+    inset 0 0 45px rgba(130,80,255,.10),
+    0 0 30px rgba(130,80,255,.05);
+}
+
+.rank {
+  font-size: 38px;
+  font-weight: 950;
+  color: #777;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.avatar {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg,#7450ff,#a34cff);
+  box-shadow:
+    0 0 15px rgba(130,80,255,.65),
+    0 0 35px rgba(130,80,255,.35),
+    0 0 60px rgba(130,80,255,.15);
+}
+
+.avatar img {
+  width: 62%;
+  height: 62%;
+  object-fit: contain;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 900;
+  text-shadow: 0 0 12px rgba(255,255,255,.15);
+}
+
+.amount {
+  font-size: 27px;
+  font-weight: 800;
+  text-shadow: 0 0 12px rgba(255,255,255,.15);
+}
+
+.prize {
+  font-size: 30px;
+  font-weight: 950;
+}
+
+/* GOLD */
+
+.row:nth-child(2) .rank {
+  color: #ffd76a;
+  text-shadow:
+    0 0 8px #ffd34d,
+    0 0 25px rgba(255,190,40,.65);
+}
+
+.row:nth-child(2) .prize {
+  color: #ffe27a;
+  text-shadow:
+    0 0 7px #ffd34d,
+    0 0 18px rgba(255,205,65,.95),
+    0 0 38px rgba(255,190,40,.65);
+}
+
+/* SILVER */
+
+.row:nth-child(3) .rank {
+  color: #ededf2;
+  text-shadow:
+    0 0 8px white,
+    0 0 25px rgba(210,220,235,.55);
+}
+
+.row:nth-child(3) .prize {
+  color: #eeeeF4;
+  text-shadow:
+    0 0 7px white,
+    0 0 18px rgba(225,230,240,.9),
+    0 0 38px rgba(205,215,230,.55);
+}
+
+/* BRONZE */
+
+.row:nth-child(4) .rank {
+  color: #d88a4e;
+  text-shadow:
+    0 0 8px #dd8745,
+    0 0 25px rgba(190,105,45,.55);
+}
+
+.row:nth-child(4) .prize {
+  color: #e49a59;
+  text-shadow:
+    0 0 7px #e69a55,
+    0 0 18px rgba(205,125,60,.9),
+    0 0 38px rgba(190,105,45,.55);
+}
+
+/* SOCIAL */
+
+.social-section {
+  width: min(700px, 92%);
+  margin: 70px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.queries-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 5px;
+  text-shadow:
+    0 0 8px white,
+    0 0 20px rgba(255,255,255,.5);
+}
+
+.social-card {
+  width: 100%;
+  padding: 20px 28px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 22px;
+  background: rgba(20,19,29,.80);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: white;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 850;
+  box-shadow:
+    0 0 25px rgba(120,70,255,.08);
+  transition: .2s;
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(160,100,255,.45);
+  box-shadow:
+    0 0 25px rgba(130,80,255,.25),
+    0 0 55px rgba(120,70,255,.10);
+}
+
+.social-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.telegram-icon {
+  background: #229ED9;
+  box-shadow:
+    0 0 15px rgba(34,158,217,.65),
+    0 0 35px rgba(34,158,217,.3);
+}
+
+.telegram-icon svg {
+  width: 29px;
+  height: 29px;
+  fill: white;
+}
+
+.x-icon {
+  background: black;
+  font-size: 31px;
+  box-shadow:
+    0 0 15px rgba(255,255,255,.2);
+}
+
+/* SNOW */
+
+.snow-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.snowflake {
+  position: absolute;
+  top: -30px;
+  color: white;
+  opacity: .85;
+  filter: drop-shadow(0 0 5px white);
+  animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(0,-30px,0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate3d(35px,28vh,0) rotate(90deg);
+  }
+
+  50% {
+    transform: translate3d(-25px,55vh,0) rotate(180deg);
+  }
+
+  75% {
+    transform: translate3d(30px,80vh,0) rotate(270deg);
+  }
+
+  100% {
+    transform: translate3d(-10px,110vh,0) rotate(360deg);
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+  .header {
+    padding: 0 5%;
+  }
+
+  .container {
+    padding-top: 40px;
+  }
+
+  .table-head,
+  .row {
+    grid-template-columns: 55px 1fr 80px 85px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .table-head {
+    min-height: 70px;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .row {
+    min-height: 90px;
+  }
+
+  .rank {
+    font-size: 25px;
+  }
+
+  .player {
+    gap: 9px;
+  }
+
+  .avatar {
+    width: 55px;
+    height: 55px;
+  }
+
+  .name,
+  .amount {
+    font-size: 14px;
+  }
+
+  .prize {
+    font-size: 16px;
+  }
+
+  .social-card {
+    font-size: 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="brand">
+    <img src="dean-logo.jpg" alt="DEAN STAKE">
+    <span>DEAN STAKE</span>
+  </div>
+
+</header>
+
+
+<main class="container">
+
+  <section class="hero">
+
+    <div class="eyebrow">
+      Monthly Competition
+    </div>
+
+    <h1>
+      $200,000 Monthly Leaderboard
+    </h1>
+
+    <div class="subtitle">
+      20th August to 20th September
+    </div>
+
+  </section>
+
+
+  <section class="board">
+
+    <div class="table-head">
+      <div>Rank</div>
+      <div>Player Name</div>
+      <div>Wagered</div>
+      <div>Prize Amount</div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="rank">01</div>
+
+      <div class="player">
+
+        <div class="avatar">
+          <img src="stake-logo.png" alt="Stake">
+        </div>
+
+        <div class="name">
+          sam
+        </div>
+
+      </div>
+
+      <div class="amount">
+        $10
+      </div>
+
+      <div class="prize">
+        $200
+      </div>
+
+    </div>
+
+
+    <div class="row">
+
+      <div class="rank">02</div>
+
+      <div class="player">
+
+        <div class="avatar">
+          <img src="stake-logo.png" alt="Stake">
+        </div>
+
+        <div class="name">
+          sus
+        </div>
+
+      </div>
+
+      <div class="amount">
+        $7
+      </div>
+
+      <div class="prize">
+        $100
+      </div>
+
+    </div>
+
+
+    <div class="row">
+
+      <div class="rank">03</div>
+
+      <div class="player">
+
+        <div class="avatar">
+          <img src="stake-logo.png" alt="Stake">
+        </div>
+
+        <div class="name">
+          kim
+        </div>
+
+      </div>
+
+      <div class="amount">
+        $6
+      </div>
+
+      <div class="prize">
+        $50
+      </div>
+
+    </div>
+
+
+    <div class="row">
+
+      <div class="rank">04</div>
+
+      <div class="player">
+
+        <div class="avatar">
+          <img src="stake-logo.png" alt="Stake">
+        </div>
+
+        <div class="name">
+          kime
+        </div>
+
+      </div>
+
+      <div class="amount">
+        $5
+      </div>
+
+      <div class="prize">
+        $40
+      </div>
+
+    </div>
+
+
+    <div class="row">
+
+      <div class="rank">05</div>
+
+      <div class="player">
+
+        <div class="avatar">
+          <img src="stake-logo.png" alt="Stake">
+        </div>
+
+        <div class="name">
+          kite
+        </div>
+
+      </div>
+
+      <div class="amount">
+        $4
+      </div>
+
+      <div class="prize">
+        $30
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="social-section">
+
+    <div class="queries-title">
+      Queries?
+    </div>
+
+
+    <!-- TELEGRAM -->
+
+    <a
+      class="social-card"
+      href="https://t.me/deanstake"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <span
+        class="social-icon telegram-icon"
+        aria-label="Telegram"
+      >
+
+        <svg viewBox="0 0 24 24">
+          <path d="M21.6 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.03-3.71-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.35-8.45c.41-.36-.09-.56-.64-.2L5.4 13.48.46 11.93c-1.08-.34-1.1-1.08.23-1.6L20 2.83c.9-.34 1.69.2 1.6.67Z"/>
+        </svg>
+
+      </span>
+
+      <span>
+        @deanstake
+      </span>
+
+    </a>
+
+
+    <!-- X -->
+
+    <a
+      class="social-card"
+      href="https://x.com/deanstake"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <span
+        class="social-icon x-icon"
+        aria-label="X"
+      >
+        𝕏
+      </span>
+
+      <span>
+        @deanstake
+      </span>
+
+    </a>
+
+  </section>
+
+</main>
+
+
+<!-- LIVE SNOW -->
+
+<div
+  class="snow-layer"
+  id="snowLayer"
+></div>
+
+
+<script>
+
+const snowLayer =
+  document.getElementById("snowLayer");
+
+const snowCount = 75;
+
+for (let i = 0; i < snowCount; i++) {
+
+  const snow =
+    document.createElement("span");
+
+  snow.className =
+    "snowflake";
+
+  snow.textContent =
+    Math.random() > .25
+      ? "•"
+      : "❄";
+
+  snow.style.left =
+    Math.random() * 100 + "vw";
+
+  snow.style.fontSize =
+    3 + Math.random() * 8 + "px";
+
+  snow.style.opacity =
+    .25 + Math.random() * .65;
+
+  snow.style.animationDuration =
+    7 + Math.random() * 13 + "s";
+
+  snow.style.animationDelay =
+    -Math.random() * 18 + "s";
+
+  snowLayer.appendChild(snow);
+
+}
+
+</script>
+
+</body>
+</html>
