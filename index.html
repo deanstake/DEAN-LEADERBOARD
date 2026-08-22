@@ -1,822 +1,812 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-  <link rel="icon" type="image/jpeg" href="dean-logo.jpg">
-  <link rel="apple-touch-icon" href="dean-logo.jpg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>$200,000 Monthly Leaderboard</title>
+
+<link rel="icon" type="image/jpeg" href="dean-logo.jpg">
+<link rel="apple-touch-icon" href="dean-logo.jpg">
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, Arial, sans-serif;
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(130,75,255,.25),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 0% 50%,
+      rgba(100,60,255,.10),
+      transparent 35%
+    ),
+    #08080e;
+}
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
 
-  <title>$200,000 Monthly Leaderboard</title>
+  border-bottom: 1px solid rgba(255,255,255,.08);
+
+  background: rgba(8,8,14,.75);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 0 35px rgba(120,70,255,.08);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
 
-  <style>
+  font-size: 21px;
+  font-weight: 950;
+  letter-spacing: 1px;
 
-    * {
-      box-sizing: border-box;
-    }
+  text-shadow:
+    0 0 12px rgba(150,90,255,.7),
+    0 0 30px rgba(120,70,255,.3);
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+.brand img {
+  width: 43px;
+  height: 43px;
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Inter, Arial, sans-serif;
-      color: white;
+  border-radius: 50%;
+  object-fit: cover;
 
-      background:
-        radial-gradient(
-          circle at 50% -10%,
-          rgba(130,75,255,.25),
-          transparent 40%
-        ),
-        radial-gradient(
-          circle at 0% 50%,
-          rgba(100,60,255,.10),
-          transparent 35%
-        ),
-        #08080e;
-    }
+  box-shadow:
+    0 0 15px rgba(130,80,255,.7),
+    0 0 35px rgba(130,80,255,.3);
+}
 
+/* =========================
+   MAIN
+========================= */
 
-    /* =========================
-       HEADER
-    ========================= */
+.container {
+  width: min(1100px, 92%);
+  margin: auto;
+  padding: 65px 0 80px;
+}
 
-    .header {
-      height: 76px;
+.hero {
+  text-align: center;
+  margin-bottom: 45px;
+}
 
-      display: flex;
-      align-items: center;
+.eyebrow {
+  color: #a064ff;
 
-      padding: 0 5%;
+  font-size: 12px;
+  font-weight: 900;
 
-      border-bottom:
-        1px solid rgba(255,255,255,.08);
+  letter-spacing: 4px;
+  text-transform: uppercase;
 
-      background:
-        rgba(8,8,14,.75);
+  margin-bottom: 15px;
 
-      backdrop-filter: blur(15px);
+  text-shadow:
+    0 0 10px rgba(160,100,255,.8),
+    0 0 25px rgba(150,90,255,.4);
+}
 
-      box-shadow:
-        0 0 35px rgba(120,70,255,.08);
-    }
+h1 {
+  margin: 0;
 
-    .brand {
-      display: flex;
-      align-items: center;
+  font-size: clamp(34px, 6vw, 62px);
+  line-height: 1.05;
 
-      gap: 13px;
+  font-weight: 950;
+  letter-spacing: -2px;
 
-      font-size: 21px;
-      font-weight: 950;
+  text-shadow:
+    0 0 12px rgba(150,90,255,.6),
+    0 0 35px rgba(120,70,255,.25);
+}
 
-      letter-spacing: 1px;
+.subtitle {
+  margin-top: 18px;
 
-      text-shadow:
-        0 0 12px rgba(150,90,255,.7),
-        0 0 30px rgba(120,70,255,.3);
-    }
+  color: white;
 
-    .brand img {
-      width: 43px;
-      height: 43px;
+  font-size: 18px;
+  font-weight: 700;
 
-      border-radius: 50%;
+  text-shadow:
+    0 0 7px white,
+    0 0 18px rgba(255,255,255,.7),
+    0 0 35px rgba(255,255,255,.35);
+}
 
-      object-fit: cover;
+/* =========================
+   COUNTDOWN
+========================= */
 
-      box-shadow:
-        0 0 15px rgba(130,80,255,.7),
-        0 0 35px rgba(130,80,255,.3);
-    }
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 
+  margin: 32px auto 45px;
+}
 
-    /* =========================
-       MAIN
-    ========================= */
+.time-box {
+  width: 105px;
 
-    .container {
-      width: min(1100px, 92%);
+  padding: 16px 8px;
 
-      margin: auto;
+  border: 2px solid rgba(160,120,230,.25);
+  border-radius: 20px;
 
-      padding:
-        65px 0 80px;
-    }
+  background: rgba(12,10,20,.65);
 
+  box-shadow:
+    0 0 20px rgba(120,70,255,.10),
+    inset 0 0 20px rgba(120,70,255,.04);
+}
 
-    /* =========================
-       HERO
-    ========================= */
+.time-number {
+  text-align: center;
 
-    .hero {
-      text-align: center;
+  font-size: 30px;
+  font-weight: 950;
 
-      margin-bottom: 45px;
-    }
+  text-shadow:
+    0 0 12px rgba(255,255,255,.8),
+    0 0 25px rgba(150,100,255,.3);
+}
 
-    .eyebrow {
-      color: #a064ff;
+.time-label {
+  margin-top: 8px;
 
-      font-size: 12px;
+  text-align: center;
 
-      font-weight: 900;
+  color: #85818e;
 
-      letter-spacing: 4px;
+  font-size: 10px;
+  font-weight: 900;
 
-      text-transform: uppercase;
+  letter-spacing: 3px;
+}
 
-      margin-bottom: 15px;
+/* =========================
+   LEADERBOARD
+========================= */
 
-      text-shadow:
-        0 0 10px rgba(160,100,255,.8),
-        0 0 25px rgba(150,90,255,.4);
-    }
+.board {
+  overflow: hidden;
 
-    h1 {
-      margin: 0;
+  border-radius: 25px;
 
-      font-size:
-        clamp(34px, 6vw, 62px);
+  border: 2px solid rgba(160,120,230,.20);
 
-      font-weight: 950;
+  background: rgba(16,15,24,.90);
 
-      letter-spacing: -2px;
+  box-shadow:
+    0 0 30px rgba(120,70,255,.12),
+    0 0 80px rgba(100,60,255,.06);
+}
 
-      line-height: 1.05;
+.table-head,
+.row {
+  display: grid;
 
-      text-shadow:
-        0 0 12px rgba(150,90,255,.6),
-        0 0 35px rgba(120,70,255,.25);
-    }
+  grid-template-columns:
+    135px
+    1fr
+    190px
+    200px;
 
-    .subtitle {
-      margin-top: 15px;
+  align-items: center;
+}
 
-      color: white;
+.table-head {
+  min-height: 95px;
 
-      font-size: 18px;
+  padding: 20px 45px;
 
-      font-weight: 700;
+  border-bottom:
+    2px solid rgba(255,255,255,.07);
 
-      text-shadow:
-        0 0 7px white,
-        0 0 18px rgba(255,255,255,.7),
-        0 0 35px rgba(255,255,255,.35);
-    }
+  color: #77747e;
 
+  font-size: 13px;
+  font-weight: 900;
 
-    /* =========================
-       COUNTDOWN
-    ========================= */
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
 
-    .countdown {
-      display: flex;
+.row {
+  min-height: 105px;
 
-      justify-content: center;
+  padding: 15px 45px;
 
-      align-items: center;
+  border-bottom:
+    2px solid rgba(255,255,255,.06);
 
-      gap: 12px;
+  box-shadow:
+    inset 0 0 35px rgba(130,80,255,.025);
 
-      margin-top: 28px;
-    }
+  transition: .25s;
+}
 
-    .count-box {
-      min-width: 75px;
+.row:last-child {
+  border-bottom: 0;
+}
 
-      padding: 13px 10px;
+.row:hover {
+  background: rgba(130,80,255,.06);
 
-      border:
-        1px solid rgba(160,120,230,.25);
+  box-shadow:
+    inset 0 0 45px rgba(130,80,255,.10),
+    0 0 30px rgba(130,80,255,.05);
+}
 
-      border-radius: 14px;
+.rank {
+  font-size: 38px;
+  font-weight: 950;
 
-      background:
-        rgba(16,15,24,.75);
+  color: #777;
+}
 
-      box-shadow:
-        0 0 20px rgba(120,70,255,.10),
-        inset 0 0 20px rgba(130,80,255,.04);
-    }
+.player {
+  display: flex;
+  align-items: center;
 
-    .count-box span {
-      display: block;
+  gap: 25px;
+}
 
-      font-size: 25px;
+.avatar {
+  width: 108px;
+  height: 108px;
 
-      font-weight: 900;
+  flex-shrink: 0;
 
-      text-shadow:
-        0 0 10px rgba(150,90,255,.7);
-    }
+  border-radius: 50%;
 
-    .count-box small {
-      display: block;
+  display: grid;
+  place-items: center;
 
-      margin-top: 4px;
+  background:
+    linear-gradient(
+      135deg,
+      #7450ff,
+      #a34cff
+    );
 
-      color: #85818e;
+  box-shadow:
+    0 0 15px rgba(130,80,255,.65),
+    0 0 35px rgba(130,80,255,.35),
+    0 0 60px rgba(130,80,255,.15);
+}
 
-      font-size: 8px;
+.name {
+  font-size: 28px;
+  font-weight: 900;
 
-      font-weight: 900;
+  white-space: nowrap;
+}
 
-      letter-spacing: 1.5px;
-    }
+.amount {
+  font-size: 27px;
+  font-weight: 800;
+}
 
+.prize {
+  font-size: 30px;
+  font-weight: 950;
 
-    /* =========================
-       LEADERBOARD
-    ========================= */
+  white-space: nowrap;
+}
 
-    .board {
-      overflow: hidden;
+/* =========================
+   GOLD
+========================= */
 
-      border-radius: 25px;
+.row:nth-child(2) .rank {
+  color: #ffd76a;
 
-      border:
-        2px solid rgba(160,120,230,.20);
+  text-shadow:
+    0 0 8px #ffd34d,
+    0 0 25px rgba(255,190,40,.65);
+}
 
-      background:
-        rgba(16,15,24,.90);
+.row:nth-child(2) .prize {
+  color: #ffe27a;
 
-      box-shadow:
-        0 0 30px rgba(120,70,255,.12),
-        0 0 80px rgba(100,60,255,.06);
-    }
+  text-shadow:
+    0 0 7px #ffd34d,
+    0 0 18px rgba(255,205,65,.95),
+    0 0 38px rgba(255,190,40,.65);
+}
 
-    .table-head,
-    .row {
-      display: grid;
+/* =========================
+   SILVER
+========================= */
 
-      grid-template-columns:
-        135px
-        1fr
-        190px
-        200px;
+.row:nth-child(3) .rank {
+  color: #ededf2;
 
-      align-items: center;
-    }
+  text-shadow:
+    0 0 8px white,
+    0 0 25px rgba(210,220,235,.55);
+}
 
-    .table-head {
-      min-height: 95px;
+.row:nth-child(3) .prize {
+  color: #eeeeF4;
 
-      padding: 20px 45px;
+  text-shadow:
+    0 0 7px white,
+    0 0 18px rgba(225,230,240,.9),
+    0 0 38px rgba(205,215,230,.55);
+}
 
-      border-bottom:
-        2px solid rgba(255,255,255,.07);
+/* =========================
+   BRONZE
+========================= */
 
-      color: #77747e;
+.row:nth-child(4) .rank {
+  color: #d88a4e;
 
-      font-size: 13px;
+  text-shadow:
+    0 0 8px #dd8745,
+    0 0 25px rgba(190,105,45,.55);
+}
 
-      font-weight: 900;
+.row:nth-child(4) .prize {
+  color: #e49a59;
 
-      letter-spacing: 4px;
+  text-shadow:
+    0 0 7px #e69a55,
+    0 0 18px rgba(205,125,60,.9),
+    0 0 38px rgba(190,105,45,.55);
+}
 
-      text-transform: uppercase;
-    }
+/* =========================
+   SOCIAL
+========================= */
 
-    .row {
-      min-height: 105px;
+.social-section {
+  width: min(700px, 92%);
 
-      padding: 15px 45px;
+  margin: 70px auto 0;
 
-      border-bottom:
-        2px solid rgba(255,255,255,.06);
+  display: flex;
+  flex-direction: column;
 
-      box-shadow:
-        inset 0 0 35px rgba(130,80,255,.025);
+  align-items: center;
 
-      transition: .25s;
-    }
+  gap: 18px;
+}
 
-    .row:last-child {
-      border-bottom: 0;
-    }
+.queries-title {
+  color: white;
 
-    .row:hover {
-      background:
-        rgba(130,80,255,.06);
+  font-size: 24px;
+  font-weight: 900;
 
-      box-shadow:
-        inset 0 0 45px rgba(130,80,255,.10),
-        0 0 30px rgba(130,80,255,.05);
-    }
+  margin-bottom: 5px;
 
-    .rank {
-      font-size: 38px;
+  text-shadow:
+    0 0 8px white,
+    0 0 20px rgba(255,255,255,.5);
+}
 
-      font-weight: 950;
+.social-card {
+  width: 100%;
 
-      color: #777;
-    }
+  padding: 20px 28px;
 
-    .player {
-      display: flex;
+  border:
+    1px solid rgba(255,255,255,.10);
 
-      align-items: center;
+  border-radius: 22px;
 
-      gap: 25px;
-    }
+  background: rgba(20,19,29,.80);
 
-    .avatar {
-      width: 108px;
-      height: 108px;
+  display: flex;
+  align-items: center;
 
-      flex-shrink: 0;
+  gap: 18px;
 
-      border-radius: 50%;
+  color: white;
+  text-decoration: none;
 
-      display: grid;
+  font-size: 21px;
+  font-weight: 850;
 
-      place-items: center;
+  box-shadow:
+    0 0 25px rgba(120,70,255,.08);
 
-      overflow: hidden;
+  transition: .2s;
+}
 
-      background:
-        linear-gradient(
-          135deg,
-          #7450ff,
-          #a34cff
-        );
+.social-card:hover {
+  transform: translateY(-3px);
 
-      box-shadow:
-        0 0 15px rgba(130,80,255,.65),
-        0 0 35px rgba(130,80,255,.35),
-        0 0 60px rgba(130,80,255,.15);
-    }
+  border-color:
+    rgba(160,100,255,.45);
 
-    .name {
-      font-size: 28px;
+  box-shadow:
+    0 0 25px rgba(130,80,255,.25),
+    0 0 55px rgba(120,70,255,.10);
+}
 
-      font-weight: 900;
+.social-icon {
+  width: 52px;
+  height: 52px;
 
-      text-shadow:
-        0 0 12px rgba(255,255,255,.15);
-    }
+  flex-shrink: 0;
 
-    .amount {
-      font-size: 27px;
+  border-radius: 50%;
 
-      font-weight: 800;
+  display: grid;
+  place-items: center;
+}
 
-      text-shadow:
-        0 0 12px rgba(255,255,255,.15);
-    }
+.telegram-icon {
+  background: #229ED9;
 
-    .prize {
-      font-size: 30px;
+  box-shadow:
+    0 0 15px rgba(34,158,217,.65),
+    0 0 35px rgba(34,158,217,.3);
+}
 
-      font-weight: 950;
-    }
+.telegram-icon svg {
+  width: 29px;
+  height: 29px;
 
+  fill: white;
+}
 
-    /* =========================
-       GOLD
-    ========================= */
+.x-icon {
+  background: black;
 
-    .row:nth-child(2) .rank {
-      color: #ffd76a;
+  font-size: 31px;
 
-      text-shadow:
-        0 0 8px #ffd34d,
-        0 0 25px rgba(255,190,40,.65);
-    }
+  box-shadow:
+    0 0 15px rgba(255,255,255,.2);
+}
 
-    .row:nth-child(2) .prize {
-      color: #ffe27a;
+/* =========================
+   FOOTER
+========================= */
 
-      text-shadow:
-        0 0 7px #ffd34d,
-        0 0 18px rgba(255,205,65,.95),
-        0 0 38px rgba(255,190,40,.65);
-    }
+.site-footer {
+  margin-top: 80px;
 
+  padding: 45px 20px;
 
-    /* =========================
-       SILVER
-    ========================= */
+  background: #08080e;
 
-    .row:nth-child(3) .rank {
-      color: #ededf2;
+  border-top:
+    1px solid rgba(255,255,255,.06);
 
-      text-shadow:
-        0 0 8px white,
-        0 0 25px rgba(210,220,235,.55);
-    }
+  display: flex;
+  justify-content: center;
+}
 
-    .row:nth-child(3) .prize {
-      color: #eeeeF4;
+.footer-content {
+  display: flex;
+  align-items: center;
 
-      text-shadow:
-        0 0 7px white,
-        0 0 18px rgba(225,230,240,.9),
-        0 0 38px rgba(205,215,230,.55);
-    }
+  gap: 25px;
+}
 
+.footer-content img {
+  width: 75px;
+  height: 75px;
 
-    /* =========================
-       BRONZE
-    ========================= */
+  border-radius: 50%;
 
-    .row:nth-child(4) .rank {
-      color: #d88a4e;
+  object-fit: cover;
 
-      text-shadow:
-        0 0 8px #dd8745,
-        0 0 25px rgba(190,105,45,.55);
-    }
+  box-shadow:
+    0 0 20px rgba(130,80,255,.35);
+}
 
-    .row:nth-child(4) .prize {
-      color: #e49a59;
+.footer-text {
+  color: #aaa7b2;
 
-      text-shadow:
-        0 0 7px #e69a55,
-        0 0 18px rgba(205,125,60,.9),
-        0 0 38px rgba(190,105,45,.55);
-    }
+  font-size: 18px;
 
+  line-height: 1.6;
+}
 
-    /* =========================
-       SOCIAL
-    ========================= */
+/* =========================
+   SNOW
+========================= */
 
-    .social-section {
-      width: min(700px, 92%);
+.snow-layer {
+  position: fixed;
 
-      margin: 70px auto 0;
+  inset: 0;
 
-      display: flex;
+  pointer-events: none;
 
-      flex-direction: column;
+  overflow: hidden;
 
-      align-items: center;
+  z-index: 9999;
+}
 
-      gap: 18px;
-    }
+.snowflake {
+  position: absolute;
 
-    .queries-title {
-      color: white;
+  top: -30px;
 
-      font-size: 24px;
+  color: white;
 
-      font-weight: 900;
+  opacity: .85;
 
-      margin-bottom: 5px;
+  filter:
+    drop-shadow(0 0 5px white);
 
-      text-shadow:
-        0 0 8px white,
-        0 0 20px rgba(255,255,255,.5);
-    }
+  animation:
+    snowfall linear infinite;
+}
 
-    .social-card {
-      width: 100%;
+@keyframes snowfall {
 
-      padding: 20px 28px;
+  0% {
+    transform:
+      translate3d(0,-30px,0)
+      rotate(0deg);
+  }
 
-      border:
-        1px solid rgba(255,255,255,.10);
+  25% {
+    transform:
+      translate3d(35px,28vh,0)
+      rotate(90deg);
+  }
 
-      border-radius: 22px;
+  50% {
+    transform:
+      translate3d(-25px,55vh,0)
+      rotate(180deg);
+  }
 
-      background:
-        rgba(20,19,29,.80);
+  75% {
+    transform:
+      translate3d(30px,80vh,0)
+      rotate(270deg);
+  }
 
-      display: flex;
+  100% {
+    transform:
+      translate3d(-10px,110vh,0)
+      rotate(360deg);
+  }
+}
 
-      align-items: center;
+/* =========================
+   MOBILE
+========================= */
 
-      gap: 18px;
+@media (max-width: 700px) {
 
-      color: white;
+  .header {
+    height: 76px;
 
-      text-decoration: none;
+    padding:
+      0 5%;
+  }
 
-      font-size: 21px;
+  .container {
+    width: 94%;
 
-      font-weight: 850;
+    padding:
+      40px 0 60px;
+  }
 
-      box-shadow:
-        0 0 25px rgba(120,70,255,.08);
+  .brand {
+    font-size: 21px;
+  }
 
-      transition: .2s;
-    }
+  .brand img {
+    width: 43px;
+    height: 43px;
+  }
 
-    .social-card:hover {
-      transform: translateY(-3px);
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
 
-      border-color:
-        rgba(160,100,255,.45);
+  h1 {
+    font-size: 42px;
 
-      box-shadow:
-        0 0 25px rgba(130,80,255,.25),
-        0 0 55px rgba(120,70,255,.10);
-    }
+    line-height: 1.05;
+  }
 
-    .social-icon {
-      width: 52px;
-      height: 52px;
+  .subtitle {
+    font-size: 17px;
+  }
 
-      border-radius: 50%;
+  /* COUNTDOWN MOBILE */
 
-      display: grid;
+  .countdown {
+    gap: 8px;
 
-      place-items: center;
+    margin-top: 28px;
+  }
 
-      flex-shrink: 0;
-    }
+  .time-box {
+    width: 78px;
 
-    .telegram-icon {
-      background: #229ED9;
+    padding:
+      13px 4px;
 
-      box-shadow:
-        0 0 15px rgba(34,158,217,.65),
-        0 0 35px rgba(34,158,217,.3);
-    }
+    border-radius: 18px;
+  }
 
-    .telegram-icon svg {
-      width: 29px;
-      height: 29px;
+  .time-number {
+    font-size: 27px;
+  }
 
-      fill: white;
-    }
+  .time-label {
+    font-size: 8px;
 
-    .x-icon {
-      background: black;
+    letter-spacing: 2px;
+  }
 
-      font-size: 31px;
+  /* TABLE MOBILE */
 
-      box-shadow:
-        0 0 15px rgba(255,255,255,.2);
-    }
+  .table-head,
+  .row {
+    grid-template-columns:
+      55px
+      1fr
+      75px
+      85px;
 
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
-    /* =========================
-       FOOTER
-    ========================= */
+  .table-head {
+    min-height: 70px;
 
-    .site-footer {
-      margin-top: 90px;
+    font-size: 8px;
 
-      padding: 45px 6%;
+    letter-spacing: 1.5px;
+  }
 
-      background:
-        rgba(8,8,14,.92);
+  .row {
+    min-height: 90px;
+  }
 
-      border-top:
-        1px solid rgba(255,255,255,.07);
-    }
+  .rank {
+    font-size: 25px;
+  }
 
-    .footer-content {
-      max-width: 900px;
+  .player {
+    gap: 9px;
+  }
 
-      margin: auto;
+  .avatar {
+    width: 55px;
+    height: 55px;
+  }
 
-      display: flex;
+  .name {
+    font-size: 18px;
+  }
 
-      align-items: center;
+  .amount {
+    font-size: 17px;
+  }
 
-      justify-content: center;
+  .prize {
+    font-size: 17px;
+  }
 
-      gap: 25px;
-    }
+  /* SOCIAL MOBILE */
 
-    .footer-content img {
-      width: 90px;
-      height: 90px;
+  .social-section {
+    width: 94%;
+  }
 
-      border-radius: 50%;
+  .social-card {
+    padding:
+      18px 20px;
 
-      object-fit: cover;
+    font-size: 19px;
+  }
 
-      flex-shrink: 0;
+  /* FOOTER MOBILE */
 
-      box-shadow:
-        0 0 20px rgba(130,80,255,.35);
-    }
+  .footer-content {
+    gap: 18px;
+  }
 
-    .footer-text {
-      color: #aaa7b2;
+  .footer-content img {
+    width: 65px;
+    height: 65px;
+  }
 
-      font-size: 20px;
+  .footer-text {
+    font-size: 16px;
+  }
 
-      line-height: 1.7;
-    }
+}
 
+/* VERY SMALL PHONES */
 
-    /* =========================
-       SNOW
-    ========================= */
+@media (max-width: 390px) {
 
-    .snow-layer {
-      position: fixed;
+  .time-box {
+    width: 70px;
+  }
 
-      inset: 0;
+  .time-number {
+    font-size: 24px;
+  }
 
-      pointer-events: none;
+  .time-label {
+    font-size: 7px;
+  }
 
-      overflow: hidden;
+  h1 {
+    font-size: 36px;
+  }
 
-      z-index: 9999;
-    }
+  .table-head,
+  .row {
+    grid-template-columns:
+      45px
+      1fr
+      65px
+      75px;
+  }
 
-    .snowflake {
-      position: absolute;
+  .avatar {
+    width: 48px;
+    height: 48px;
+  }
 
-      top: -30px;
+  .name {
+    font-size: 16px;
+  }
 
-      color: white;
+  .amount {
+    font-size: 15px;
+  }
 
-      opacity: .85;
+  .prize {
+    font-size: 15px;
+  }
 
-      filter:
-        drop-shadow(0 0 5px white);
+}
 
-      animation:
-        snowfall linear infinite;
-    }
-
-    @keyframes snowfall {
-
-      0% {
-        transform:
-          translate3d(0,-30px,0)
-          rotate(0deg);
-      }
-
-      25% {
-        transform:
-          translate3d(35px,28vh,0)
-          rotate(90deg);
-      }
-
-      50% {
-        transform:
-          translate3d(-25px,55vh,0)
-          rotate(180deg);
-      }
-
-      75% {
-        transform:
-          translate3d(30px,80vh,0)
-          rotate(270deg);
-      }
-
-      100% {
-        transform:
-          translate3d(-10px,110vh,0)
-          rotate(360deg);
-      }
-
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media(max-width:700px) {
-
-      .header {
-        padding: 0 5%;
-      }
-
-      .container {
-        width: 94%;
-
-        padding:
-          40px 0 60px;
-      }
-
-      h1 {
-        font-size: 39px;
-
-        line-height: 1.05;
-
-        letter-spacing: -1.5px;
-      }
-
-      .subtitle {
-        font-size: 16px;
-      }
-
-      .countdown {
-        gap: 6px;
-      }
-
-      .count-box {
-        min-width: 65px;
-
-        padding:
-          10px 6px;
-      }
-
-      .count-box span {
-        font-size: 20px;
-      }
-
-      .count-box small {
-        font-size: 7px;
-      }
-
-      .table-head,
-      .row {
-        grid-template-columns:
-          55px
-          1fr
-          65px
-          80px;
-
-        padding-left: 12px;
-        padding-right: 12px;
-      }
-
-      .table-head {
-        min-height: 65px;
-
-        font-size: 7px;
-
-        letter-spacing: 1px;
-      }
-
-      .row {
-        min-height: 90px;
-      }
-
-      .rank {
-        font-size: 25px;
-      }
-
-      .player {
-        gap: 8px;
-      }
-
-      .avatar {
-        width: 55px;
-        height: 55px;
-      }
-
-      .name {
-        font-size: 16px;
-      }
-
-      .amount {
-        font-size: 16px;
-      }
-
-      .prize {
-        font-size: 16px;
-      }
-
-      .social-section {
-        margin-top: 55px;
-      }
-
-      .social-card {
-        padding: 16px;
-
-        font-size: 18px;
-      }
-
-      .social-icon {
-        width: 48px;
-        height: 48px;
-      }
-
-      .site-footer {
-        margin-top: 60px;
-
-        padding:
-          35px 25px;
-      }
-
-      .footer-content {
-        justify-content: flex-start;
-
-        gap: 18px;
-      }
-
-      .footer-content img {
-        width: 65px;
-        height: 65px;
-      }
-
-      .footer-text {
-        font-size: 15px;
-
-        line-height: 1.6;
-      }
-
-    }
-
-  </style>
+</style>
 
 </head>
 
@@ -824,608 +814,662 @@
 <body>
 
 
-  <!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
-  <header class="header">
+<header class="header">
 
-    <div class="brand">
+  <div class="brand">
 
-      <img
-        src="dean-logo.jpg"
-        alt="DEAN"
-      >
+    <img
+      src="dean-logo.jpg"
+      alt="DEAN"
+    >
 
-      <span>DEAN</span>
+    <span>DEAN</span>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="container">
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="eyebrow">
+      Monthly Competition
+    </div>
+
+    <h1>
+      $200,000 Monthly Leaderboard
+    </h1>
+
+    <div class="subtitle">
+      1st September to 30th September
+    </div>
+
+
+    <!-- COUNTDOWN -->
+
+    <div class="countdown">
+
+
+      <!-- DAYS -->
+
+      <div class="time-box">
+
+        <div
+          class="time-number"
+          id="days"
+        >
+          00
+        </div>
+
+        <div class="time-label">
+          DAYS
+        </div>
+
+      </div>
+
+
+      <!-- HOURS -->
+
+      <div class="time-box">
+
+        <div
+          class="time-number"
+          id="hours"
+        >
+          00
+        </div>
+
+        <div class="time-label">
+          HOURS
+        </div>
+
+      </div>
+
+
+      <!-- MINUTES -->
+
+      <div class="time-box">
+
+        <div
+          class="time-number"
+          id="minutes"
+        >
+          00
+        </div>
+
+        <div class="time-label">
+          MINUTES
+        </div>
+
+      </div>
+
+
+      <!-- SECONDS -->
+
+      <div class="time-box">
+
+        <div
+          class="time-number"
+          id="seconds"
+        >
+          00
+        </div>
+
+        <div class="time-label">
+          SECONDS
+        </div>
+
+      </div>
+
 
     </div>
 
-  </header>
+  </section>
 
 
-  <!-- MAIN -->
+  <!-- =========================
+       LEADERBOARD
+  ========================= -->
 
-  <main class="container">
+  <section class="board">
 
 
-    <!-- HERO -->
+    <!-- TABLE HEADER -->
 
-    <section class="hero">
+    <div class="table-head">
 
-      <div class="eyebrow">
-        Monthly Competition
+      <div>
+        Rank
       </div>
 
-      <h1>
-        $200,000 Monthly Leaderboard
-      </h1>
-
-      <div class="subtitle">
-        1st September to 30th September
+      <div>
+        Player Name
       </div>
 
-
-      <!-- COUNTDOWN -->
-
-      <div class="countdown">
-
-        <div class="count-box">
-
-          <span id="days">
-            00
-          </span>
-
-          <small>
-            DAYS
-          </small>
-
-        </div>
-
-
-        <div class="count-box">
-
-          <span id="hours">
-            00
-          </span>
-
-          <small>
-            HOURS
-          </small>
-
-        </div>
-
-
-        <div class="count-box">
-
-          <span id="minutes">
-            00
-          </span>
-
-          <small>
-            MINUTES
-          </small>
-
-        </div>
-
-
-        <div class="count-box">
-
-          <span id="seconds">
-            00
-          </span>
-
-          <small>
-            SECONDS
-          </small>
-
-        </div>
-
+      <div>
+        Wagered
       </div>
 
-    </section>
-
-
-    <!-- LEADERBOARD -->
-
-    <section class="board">
-
-
-      <div class="table-head">
-
-        <div>
-          Rank
-        </div>
-
-        <div>
-          Player Name
-        </div>
-
-        <div>
-          Wagered
-        </div>
-
-        <div>
-          Prize Amount
-        </div>
-
-      </div>
-
-
-      <!-- 01 -->
-
-      <div class="row">
-
-        <div class="rank">
-          01
-        </div>
-
-        <div class="player">
-
-          <div class="avatar"></div>
-
-          <div class="name">
-            sam
-          </div>
-
-        </div>
-
-        <div class="amount">
-          $10
-        </div>
-
-        <div class="prize">
-          $100,000
-        </div>
-
-      </div>
-
-
-      <!-- 02 -->
-
-      <div class="row">
-
-        <div class="rank">
-          02
-        </div>
-
-        <div class="player">
-
-          <div class="avatar"></div>
-
-          <div class="name">
-            sus
-          </div>
-
-        </div>
-
-        <div class="amount">
-          $7
-        </div>
-
-        <div class="prize">
-          $50,000
-        </div>
-
-      </div>
-
-
-      <!-- 03 -->
-
-      <div class="row">
-
-        <div class="rank">
-          03
-        </div>
-
-        <div class="player">
-
-          <div class="avatar"></div>
-
-          <div class="name">
-            kim
-          </div>
-
-        </div>
-
-        <div class="amount">
-          $6
-        </div>
-
-        <div class="prize">
-          $25,000
-        </div>
-
-      </div>
-
-
-      <!-- 04 -->
-
-      <div class="row">
-
-        <div class="rank">
-          04
-        </div>
-
-        <div class="player">
-
-          <div class="avatar"></div>
-
-          <div class="name">
-            kime
-          </div>
-
-        </div>
-
-        <div class="amount">
-          $5
-        </div>
-
-        <div class="prize">
-          $15,000
-        </div>
-
-      </div>
-
-
-      <!-- 05 -->
-
-      <div class="row">
-
-        <div class="rank">
-          05
-        </div>
-
-        <div class="player">
-
-          <div class="avatar"></div>
-
-          <div class="name">
-            kite
-          </div>
-
-        </div>
-
-        <div class="amount">
-          $4
-        </div>
-
-        <div class="prize">
-          $10,000
-        </div>
-
-      </div>
-
-
-    </section>
-
-
-    <!-- SOCIAL -->
-
-    <section class="social-section">
-
-
-      <div class="queries-title">
-        Queries?
-      </div>
-
-
-      <!-- TELEGRAM -->
-
-      <a
-        class="social-card"
-        href="https://t.me/deanstake"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-
-        <span
-          class="social-icon telegram-icon"
-          aria-label="Telegram"
-        >
-
-          <svg viewBox="0 0 24 24">
-
-            <path d="M21.6 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.03-3.71-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.35-8.45c.41-.36-.09-.56-.64-.2L5.4 13.48.46 11.93c-1.08-.34-1.1-1.08.23-1.6L20 2.83c.9-.34 1.69.2 1.6.67Z"/>
-
-          </svg>
-
-        </span>
-
-        <span>
-          @deanstake
-        </span>
-
-      </a>
-
-
-      <!-- X -->
-
-      <a
-        class="social-card"
-        href="https://x.com/deanstake"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-
-        <span
-          class="social-icon x-icon"
-          aria-label="X"
-        >
-          𝕏
-        </span>
-
-        <span>
-          @deanstake
-        </span>
-
-      </a>
-
-
-    </section>
-
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer class="site-footer">
-
-    <div class="footer-content">
-
-      <img
-        src="dean-logo.jpg"
-        alt="DEAN"
-      >
-
-      <div class="footer-text">
-
-        <div>
-          © Copyright 2026 DeanStake.com
-        </div>
-
-        <div>
-          All rights reserved
-        </div>
-
+      <div>
+        Prize Amount
       </div>
 
     </div>
 
-  </footer>
+
+    <!-- PLAYER 1 -->
+
+    <div class="row">
+
+      <div class="rank">
+        01
+      </div>
+
+      <div class="player">
+
+        <div class="avatar"></div>
+
+        <div class="name">
+          sam
+        </div>
+
+      </div>
+
+      <div class="amount">
+        $10
+      </div>
+
+      <div class="prize">
+        $100,000
+      </div>
+
+    </div>
 
 
-  <!-- SNOW -->
+    <!-- PLAYER 2 -->
 
-  <div
-    class="snow-layer"
-    id="snowLayer"
-  ></div>
+    <div class="row">
 
+      <div class="rank">
+        02
+      </div>
 
-  <!-- JAVASCRIPT -->
+      <div class="player">
 
-  <script>
+        <div class="avatar"></div>
 
+        <div class="name">
+          sus
+        </div>
 
-    /* ==================================
-       GENEVA COUNTDOWN
-       
-       Geneva is UTC+2 during September.
+      </div>
 
-       START:
-       1 September 2026
-       12:00 AM Geneva
-       = 31 August 2026 22:00 UTC
+      <div class="amount">
+        $7
+      </div>
 
-       END:
-       30 September 2026
-       12:00 PM Geneva
-       = 30 September 2026 10:00 UTC
-    ================================== */
+      <div class="prize">
+        $50,000
+      </div>
 
-    const startTime =
-      new Date(
-        "2026-08-31T22:00:00Z"
-      ).getTime();
+    </div>
 
 
-    const endTime =
-      new Date(
-        "2026-09-30T10:00:00Z"
-      ).getTime();
+    <!-- PLAYER 3 -->
+
+    <div class="row">
+
+      <div class="rank">
+        03
+      </div>
+
+      <div class="player">
+
+        <div class="avatar"></div>
+
+        <div class="name">
+          kim
+        </div>
+
+      </div>
+
+      <div class="amount">
+        $6
+      </div>
+
+      <div class="prize">
+        $25,000
+      </div>
+
+    </div>
 
 
-    function updateCountdown() {
+    <!-- PLAYER 4 -->
 
-      const now =
-        Date.now();
+    <div class="row">
 
+      <div class="rank">
+        04
+      </div>
 
-      let distance;
+      <div class="player">
 
+        <div class="avatar"></div>
 
-      /*
-        BEFORE START
-      */
+        <div class="name">
+          kime
+        </div>
 
-      if (now < startTime) {
+      </div>
 
-        distance =
-          startTime - now;
+      <div class="amount">
+        $5
+      </div>
 
-      }
+      <div class="prize">
+        $15,000
+      </div>
 
-
-      /*
-        COMPETITION ACTIVE
-      */
-
-      else if (now < endTime) {
-
-        distance =
-          endTime - now;
-
-      }
+    </div>
 
 
-      /*
-        COMPETITION ENDED
-      */
+    <!-- PLAYER 5 -->
 
-      else {
+    <div class="row">
 
-        distance = 0;
+      <div class="rank">
+        05
+      </div>
 
-      }
+      <div class="player">
 
+        <div class="avatar"></div>
 
-      const days =
-        Math.floor(
-          distance /
-          (1000 * 60 * 60 * 24)
-        );
+        <div class="name">
+          kite
+        </div>
 
+      </div>
 
-      const hours =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60 * 60 * 24)
-          )
-          /
-          (1000 * 60 * 60)
-        );
+      <div class="amount">
+        $4
+      </div>
 
+      <div class="prize">
+        $10,000
+      </div>
 
-      const minutes =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60 * 60)
-          )
-          /
-          (1000 * 60)
-        );
+    </div>
 
 
-      const seconds =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60)
-          )
-          /
-          1000
-        );
+  </section>
 
 
-      document.getElementById(
-        "days"
-      ).textContent =
-        String(days).padStart(2, "0");
+  <!-- =========================
+       SOCIAL
+  ========================= -->
+
+  <section class="social-section">
 
 
-      document.getElementById(
-        "hours"
-      ).textContent =
-        String(hours).padStart(2, "0");
+    <div class="queries-title">
+      Queries?
+    </div>
 
 
-      document.getElementById(
-        "minutes"
-      ).textContent =
-        String(minutes).padStart(2, "0");
+    <!-- TELEGRAM -->
+
+    <a
+      class="social-card"
+      href="https://t.me/deanstake"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <span
+        class="social-icon telegram-icon"
+      >
+
+        <svg viewBox="0 0 24 24">
+
+          <path
+            d="M21.6 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.03-3.71-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.35-8.45c.41-.36-.09-.56-.64-.2L5.4 13.48.46 11.93c-1.08-.34-1.1-1.08.23-1.6L20 2.83c.9-.34 1.69.2 1.6.67Z"
+          />
+
+        </svg>
+
+      </span>
+
+      <span>
+        @deanstake
+      </span>
+
+    </a>
 
 
-      document.getElementById(
-        "seconds"
-      ).textContent =
-        String(seconds).padStart(2, "0");
+    <!-- X -->
 
-    }
+    <a
+      class="social-card"
+      href="https://x.com/deanstake"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <span
+        class="social-icon x-icon"
+      >
+        𝕏
+      </span>
+
+      <span>
+        @deanstake
+      </span>
+
+    </a>
 
 
-    updateCountdown();
+  </section>
 
 
-    setInterval(
-      updateCountdown,
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="site-footer">
+
+  <div class="footer-content">
+
+    <img
+      src="dean-logo.jpg"
+      alt="DEAN"
+    >
+
+    <div class="footer-text">
+
+      <div>
+        © Copyright 2026
+      </div>
+
+      <div>
+        DeanStake.com
+      </div>
+
+      <div>
+        All rights reserved
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================
+     SNOW
+========================= -->
+
+<div
+  class="snow-layer"
+  id="snowLayer"
+></div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+/*
+=================================================
+GENEVA COUNTDOWN
+=================================================
+
+Competition:
+
+START:
+1 September 2026
+12:00 AM Geneva time
+
+END:
+30 September 2026
+12:00 PM Geneva time
+
+Geneva is on CEST (UTC+2)
+on 30 September 2026.
+
+Therefore:
+
+12:00 PM Geneva
+=
+10:00 AM UTC
+
+The countdown below uses UTC so it works
+correctly regardless of the visitor's country.
+=================================================
+*/
+
+
+const endTime =
+  new Date(
+    "2026-09-30T10:00:00Z"
+  ).getTime();
+
+
+function updateCountdown() {
+
+
+  const now =
+    Date.now();
+
+
+  let distance =
+    Math.max(
+      0,
+      endTime - now
+    );
+
+
+  /*
+  DAYS
+  */
+
+  const days =
+    Math.floor(
+      distance /
+      (1000 * 60 * 60 * 24)
+    );
+
+
+  distance =
+    distance %
+    (1000 * 60 * 60 * 24);
+
+
+  /*
+  HOURS
+  */
+
+  const hours =
+    Math.floor(
+      distance /
+      (1000 * 60 * 60)
+    );
+
+
+  distance =
+    distance %
+    (1000 * 60 * 60);
+
+
+  /*
+  MINUTES
+  */
+
+  const minutes =
+    Math.floor(
+      distance /
+      (1000 * 60)
+    );
+
+
+  distance =
+    distance %
+    (1000 * 60);
+
+
+  /*
+  SECONDS
+  */
+
+  const seconds =
+    Math.floor(
+      distance /
       1000
     );
 
 
-    /* ==================================
-       SNOW
-    ================================== */
+  /*
+  PUT VALUES ON PAGE
+  */
 
-    const snowLayer =
-      document.getElementById(
-        "snowLayer"
-      );
-
-
-    const snowCount = 75;
+  document.getElementById(
+    "days"
+  ).textContent =
+    String(days)
+      .padStart(2, "0");
 
 
-    for (
-      let i = 0;
-      i < snowCount;
-      i++
-    ) {
-
-      const snow =
-        document.createElement(
-          "span"
-        );
+  document.getElementById(
+    "hours"
+  ).textContent =
+    String(hours)
+      .padStart(2, "0");
 
 
-      snow.className =
-        "snowflake";
+  document.getElementById(
+    "minutes"
+  ).textContent =
+    String(minutes)
+      .padStart(2, "0");
 
 
-      snow.textContent =
-        Math.random() > .25
-          ? "•"
-          : "❄";
+  document.getElementById(
+    "seconds"
+  ).textContent =
+    String(seconds)
+      .padStart(2, "0");
+
+}
 
 
-      snow.style.left =
-        Math.random() * 100 +
-        "vw";
+/*
+RUN IMMEDIATELY
+*/
+
+updateCountdown();
 
 
-      snow.style.fontSize =
-        3 +
-        Math.random() * 8 +
-        "px";
+/*
+UPDATE EVERY SECOND
+*/
+
+setInterval(
+  updateCountdown,
+  1000
+);
 
 
-      snow.style.opacity =
-        .25 +
-        Math.random() * .65;
+/* =========================
+   SNOW EFFECT
+========================= */
+
+const snowLayer =
+  document.getElementById(
+    "snowLayer"
+  );
 
 
-      snow.style.animationDuration =
-        7 +
-        Math.random() * 13 +
-        "s";
+const snowCount =
+  75;
 
 
-      snow.style.animationDelay =
-        -Math.random() * 18 +
-        "s";
+for (
+  let i = 0;
+  i < snowCount;
+  i++
+) {
 
 
-      snowLayer.appendChild(
-        snow
-      );
+  const snow =
+    document.createElement(
+      "span"
+    );
 
-    }
+
+  snow.className =
+    "snowflake";
 
 
-  </script>
+  snow.textContent =
+    Math.random() > 0.25
+      ? "•"
+      : "❄";
+
+
+  snow.style.left =
+    Math.random() * 100 +
+    "vw";
+
+
+  snow.style.fontSize =
+    3 +
+    Math.random() * 8 +
+    "px";
+
+
+  snow.style.opacity =
+    0.25 +
+    Math.random() * 0.65;
+
+
+  snow.style.animationDuration =
+    7 +
+    Math.random() * 13 +
+    "s";
+
+
+  snow.style.animationDelay =
+    -Math.random() * 18 +
+    "s";
+
+
+  snowLayer.appendChild(
+    snow
+  );
+
+}
+
+</script>
 
 
 </body>
-
 </html>
