@@ -1,679 +1,803 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<link rel="icon" type="image/jpeg" href="dean-logo.jpg">
-<link rel="apple-touch-icon" href="dean-logo.jpg">
+  <link rel="icon" type="image/jpeg" href="dean-logo.jpg">
+  <link rel="apple-touch-icon" href="dean-logo.jpg">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>$200,000 Monthly Leaderboard</title>
+  <title>$200,000 Monthly Leaderboard</title>
 
-<style>
+  <style>
 
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Inter, Arial, sans-serif;
-  color: white;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, Arial, sans-serif;
+      color: white;
 
-  background:
-    radial-gradient(
-      circle at 50% -10%,
-      rgba(130,75,255,.25),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 0% 50%,
-      rgba(100,60,255,.10),
-      transparent 35%
-    ),
-    #08080e;
-}
+      background:
+        radial-gradient(
+          circle at 50% -10%,
+          rgba(130,75,255,.25),
+          transparent 40%
+        ),
+        radial-gradient(
+          circle at 0% 50%,
+          rgba(100,60,255,.10),
+          transparent 35%
+        ),
+        #08080e;
+    }
 
+    /* =========================
+       HEADER
+    ========================= */
 
-/* =========================
-   HEADER
-========================= */
+    .header {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
 
-.header {
-  height: 76px;
-  display: flex;
-  align-items: center;
-  padding: 0 5%;
+      border-bottom: 1px solid rgba(255,255,255,.08);
 
-  border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(8,8,14,.75);
 
-  background: rgba(8,8,14,.75);
+      backdrop-filter: blur(15px);
 
-  backdrop-filter: blur(15px);
+      box-shadow:
+        0 0 35px rgba(120,70,255,.08);
+    }
 
-  box-shadow:
-    0 0 35px rgba(120,70,255,.08);
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 13px;
+      font-size: 21px;
+      font-weight: 950;
 
-  font-size: 21px;
-  font-weight: 950;
-  letter-spacing: 1px;
+      letter-spacing: 1px;
 
-  text-shadow:
-    0 0 12px rgba(150,90,255,.7),
-    0 0 30px rgba(120,70,255,.3);
-}
+      text-shadow:
+        0 0 12px rgba(150,90,255,.7),
+        0 0 30px rgba(120,70,255,.3);
+    }
 
-.brand img {
-  width: 43px;
-  height: 43px;
+    .brand img {
+      width: 43px;
+      height: 43px;
 
-  border-radius: 50%;
-  object-fit: cover;
+      border-radius: 50%;
 
-  box-shadow:
-    0 0 15px rgba(130,80,255,.7),
-    0 0 35px rgba(130,80,255,.3);
-}
+      object-fit: cover;
 
+      box-shadow:
+        0 0 15px rgba(130,80,255,.7),
+        0 0 35px rgba(130,80,255,.3);
+    }
 
-/* =========================
-   MAIN
-========================= */
 
-.container {
-  width: min(1100px, 92%);
-  margin: auto;
+    /* =========================
+       MAIN
+    ========================= */
 
-  padding: 65px 0 80px;
-}
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
 
-.hero {
-  text-align: center;
-  margin-bottom: 45px;
-}
+      padding: 65px 0 80px;
+    }
 
-.eyebrow {
-  color: #a064ff;
 
-  font-size: 12px;
-  font-weight: 900;
+    /* =========================
+       HERO
+    ========================= */
 
-  letter-spacing: 4px;
-  text-transform: uppercase;
+    .hero {
+      text-align: center;
+      margin-bottom: 45px;
+    }
 
-  margin-bottom: 15px;
+    .eyebrow {
+      color: #a064ff;
 
-  text-shadow:
-    0 0 10px rgba(160,100,255,.8),
-    0 0 25px rgba(150,90,255,.4);
-}
+      font-size: 12px;
+      font-weight: 900;
 
-h1 {
-  margin: 0;
+      letter-spacing: 4px;
 
-  font-size: clamp(34px, 6vw, 62px);
-  font-weight: 950;
+      text-transform: uppercase;
 
-  letter-spacing: -2px;
+      margin-bottom: 15px;
 
-  text-shadow:
-    0 0 12px rgba(150,90,255,.6),
-    0 0 35px rgba(120,70,255,.25);
-}
+      text-shadow:
+        0 0 10px rgba(160,100,255,.8),
+        0 0 25px rgba(150,90,255,.4);
+    }
 
-.subtitle {
-  margin-top: 15px;
+    h1 {
+      margin: 0;
 
-  color: white;
+      font-size: clamp(34px, 6vw, 62px);
 
-  font-size: 18px;
-  font-weight: 700;
+      font-weight: 950;
 
-  text-shadow:
-    0 0 7px white,
-    0 0 18px rgba(255,255,255,.7),
-    0 0 35px rgba(255,255,255,.35);
-}
+      letter-spacing: -2px;
 
+      text-shadow:
+        0 0 12px rgba(150,90,255,.6),
+        0 0 35px rgba(120,70,255,.25);
+    }
 
-/* =========================
-   LEADERBOARD
-========================= */
+    .subtitle {
+      margin-top: 15px;
 
-.board {
-  overflow: hidden;
+      color: white;
 
-  border-radius: 25px;
+      font-size: 18px;
 
-  border: 2px solid rgba(160,120,230,.20);
+      font-weight: 700;
 
-  background: rgba(16,15,24,.90);
+      text-shadow:
+        0 0 7px white,
+        0 0 18px rgba(255,255,255,.7),
+        0 0 35px rgba(255,255,255,.35);
+    }
 
-  box-shadow:
-    0 0 30px rgba(120,70,255,.12),
-    0 0 80px rgba(100,60,255,.06);
-}
 
-.table-head,
-.row {
-  display: grid;
+    /* =========================
+       COUNTDOWN
+    ========================= */
 
-  grid-template-columns:
-    135px
-    1fr
-    190px
-    200px;
+    .countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-  align-items: center;
-}
+      gap: 12px;
 
-.table-head {
-  min-height: 95px;
+      margin-top: 28px;
+    }
 
-  padding: 20px 45px;
+    .count-box {
+      min-width: 75px;
 
-  border-bottom:
-    2px solid rgba(255,255,255,.07);
+      padding: 13px 10px;
 
-  color: #77747e;
+      border: 1px solid rgba(160,120,230,.25);
 
-  font-size: 13px;
-  font-weight: 900;
+      border-radius: 14px;
 
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
+      background: rgba(16,15,24,.75);
 
-.row {
-  min-height: 105px;
+      box-shadow:
+        0 0 20px rgba(120,70,255,.10),
+        inset 0 0 20px rgba(130,80,255,.04);
+    }
 
-  padding: 15px 45px;
+    .count-box span {
+      display: block;
 
-  border-bottom:
-    2px solid rgba(255,255,255,.06);
+      font-size: 25px;
 
-  box-shadow:
-    inset 0 0 35px rgba(130,80,255,.025);
+      font-weight: 900;
 
-  transition: .25s;
-}
+      text-shadow:
+        0 0 10px rgba(150,90,255,.7);
+    }
 
-.row:last-child {
-  border-bottom: 0;
-}
+    .count-box small {
+      display: block;
 
-.row:hover {
-  background: rgba(130,80,255,.06);
+      margin-top: 4px;
 
-  box-shadow:
-    inset 0 0 45px rgba(130,80,255,.10),
-    0 0 30px rgba(130,80,255,.05);
-}
+      color: #85818e;
 
-.rank {
-  font-size: 38px;
-  font-weight: 950;
+      font-size: 8px;
 
-  color: #777;
-}
+      font-weight: 900;
 
-.player {
-  display: flex;
-  align-items: center;
+      letter-spacing: 1.5px;
+    }
 
-  gap: 25px;
-}
 
-.avatar {
-  width: 108px;
-  height: 108px;
+    /* =========================
+       LEADERBOARD
+    ========================= */
 
-  border-radius: 50%;
+    .board {
+      overflow: hidden;
 
-  display: grid;
-  place-items: center;
+      border-radius: 25px;
 
-  overflow: hidden;
+      border: 2px solid rgba(160,120,230,.20);
 
-  background:
-    linear-gradient(
-      135deg,
-      #7450ff,
-      #a34cff
-    );
+      background: rgba(16,15,24,.90);
 
-  box-shadow:
-    0 0 15px rgba(130,80,255,.65),
-    0 0 35px rgba(130,80,255,.35),
-    0 0 60px rgba(130,80,255,.15);
-}
+      box-shadow:
+        0 0 30px rgba(120,70,255,.12),
+        0 0 80px rgba(100,60,255,.06);
+    }
 
-.avatar img {
-  width: 62%;
-  height: 62%;
+    .table-head,
+    .row {
+      display: grid;
 
-  object-fit: contain;
-}
+      grid-template-columns:
+        135px
+        1fr
+        190px
+        200px;
 
-.name {
-  font-size: 28px;
-  font-weight: 900;
+      align-items: center;
+    }
 
-  text-shadow:
-    0 0 12px rgba(255,255,255,.15);
-}
+    .table-head {
+      min-height: 95px;
 
-.amount {
-  font-size: 27px;
-  font-weight: 800;
+      padding: 20px 45px;
 
-  text-shadow:
-    0 0 12px rgba(255,255,255,.15);
-}
+      border-bottom:
+        2px solid rgba(255,255,255,.07);
 
-.prize {
-  font-size: 30px;
-  font-weight: 950;
-}
+      color: #77747e;
 
+      font-size: 13px;
 
-/* =========================
-   GOLD
-========================= */
+      font-weight: 900;
 
-.row:nth-child(2) .rank {
-  color: #ffd76a;
+      letter-spacing: 4px;
 
-  text-shadow:
-    0 0 8px #ffd34d,
-    0 0 25px rgba(255,190,40,.65);
-}
+      text-transform: uppercase;
+    }
 
-.row:nth-child(2) .prize {
-  color: #ffe27a;
+    .row {
+      min-height: 105px;
 
-  text-shadow:
-    0 0 7px #ffd34d,
-    0 0 18px rgba(255,205,65,.95),
-    0 0 38px rgba(255,190,40,.65);
-}
+      padding: 15px 45px;
 
+      border-bottom:
+        2px solid rgba(255,255,255,.06);
 
-/* =========================
-   SILVER
-========================= */
+      box-shadow:
+        inset 0 0 35px rgba(130,80,255,.025);
 
-.row:nth-child(3) .rank {
-  color: #ededf2;
+      transition: .25s;
+    }
 
-  text-shadow:
-    0 0 8px white,
-    0 0 25px rgba(210,220,235,.55);
-}
+    .row:last-child {
+      border-bottom: 0;
+    }
 
-.row:nth-child(3) .prize {
-  color: #eeeeF4;
+    .row:hover {
+      background: rgba(130,80,255,.06);
 
-  text-shadow:
-    0 0 7px white,
-    0 0 18px rgba(225,230,240,.9),
-    0 0 38px rgba(205,215,230,.55);
-}
+      box-shadow:
+        inset 0 0 45px rgba(130,80,255,.10),
+        0 0 30px rgba(130,80,255,.05);
+    }
 
+    .rank {
+      font-size: 38px;
 
-/* =========================
-   BRONZE
-========================= */
+      font-weight: 950;
 
-.row:nth-child(4) .rank {
-  color: #d88a4e;
+      color: #777;
+    }
 
-  text-shadow:
-    0 0 8px #dd8745,
-    0 0 25px rgba(190,105,45,.55);
-}
+    .player {
+      display: flex;
 
-.row:nth-child(4) .prize {
-  color: #e49a59;
+      align-items: center;
 
-  text-shadow:
-    0 0 7px #e69a55,
-    0 0 18px rgba(205,125,60,.9),
-    0 0 38px rgba(190,105,45,.55);
-}
+      gap: 25px;
+    }
 
+    .avatar {
+      width: 108px;
+      height: 108px;
 
-/* =========================
-   SOCIAL
-========================= */
+      flex-shrink: 0;
 
-.social-section {
-  width: min(700px, 92%);
+      border-radius: 50%;
 
-  margin: 70px auto 0;
+      display: grid;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+      place-items: center;
 
-  gap: 18px;
-}
+      overflow: hidden;
 
-.queries-title {
-  color: white;
+      background:
+        linear-gradient(
+          135deg,
+          #7450ff,
+          #a34cff
+        );
 
-  font-size: 24px;
-  font-weight: 900;
+      box-shadow:
+        0 0 15px rgba(130,80,255,.65),
+        0 0 35px rgba(130,80,255,.35),
+        0 0 60px rgba(130,80,255,.15);
+    }
 
-  margin-bottom: 5px;
+    .name {
+      font-size: 28px;
 
-  text-shadow:
-    0 0 8px white,
-    0 0 20px rgba(255,255,255,.5);
-}
+      font-weight: 900;
 
-.social-card {
-  width: 100%;
+      text-shadow:
+        0 0 12px rgba(255,255,255,.15);
+    }
 
-  padding: 20px 28px;
+    .amount {
+      font-size: 27px;
 
-  border: 1px solid rgba(255,255,255,.10);
+      font-weight: 800;
 
-  border-radius: 22px;
+      text-shadow:
+        0 0 12px rgba(255,255,255,.15);
+    }
 
-  background: rgba(20,19,29,.80);
+    .prize {
+      font-size: 30px;
 
-  display: flex;
-  align-items: center;
+      font-weight: 950;
+    }
 
-  gap: 18px;
 
-  color: white;
+    /* =========================
+       GOLD
+    ========================= */
 
-  text-decoration: none;
+    .row:nth-child(2) .rank {
+      color: #ffd76a;
 
-  font-size: 21px;
-  font-weight: 850;
+      text-shadow:
+        0 0 8px #ffd34d,
+        0 0 25px rgba(255,190,40,.65);
+    }
 
-  box-shadow:
-    0 0 25px rgba(120,70,255,.08);
+    .row:nth-child(2) .prize {
+      color: #ffe27a;
 
-  transition: .2s;
-}
+      text-shadow:
+        0 0 7px #ffd34d,
+        0 0 18px rgba(255,205,65,.95),
+        0 0 38px rgba(255,190,40,.65);
+    }
 
-.social-card:hover {
-  transform: translateY(-3px);
 
-  border-color:
-    rgba(160,100,255,.45);
+    /* =========================
+       SILVER
+    ========================= */
 
-  box-shadow:
-    0 0 25px rgba(130,80,255,.25),
-    0 0 55px rgba(120,70,255,.10);
-}
+    .row:nth-child(3) .rank {
+      color: #ededf2;
 
-.social-icon {
-  width: 52px;
-  height: 52px;
+      text-shadow:
+        0 0 8px white,
+        0 0 25px rgba(210,220,235,.55);
+    }
 
-  border-radius: 50%;
+    .row:nth-child(3) .prize {
+      color: #eeeeF4;
 
-  display: grid;
-  place-items: center;
-}
+      text-shadow:
+        0 0 7px white,
+        0 0 18px rgba(225,230,240,.9),
+        0 0 38px rgba(205,215,230,.55);
+    }
 
-.telegram-icon {
-  background: #229ED9;
 
-  box-shadow:
-    0 0 15px rgba(34,158,217,.65),
-    0 0 35px rgba(34,158,217,.3);
-}
+    /* =========================
+       BRONZE
+    ========================= */
 
-.telegram-icon svg {
-  width: 29px;
-  height: 29px;
+    .row:nth-child(4) .rank {
+      color: #d88a4e;
 
-  fill: white;
-}
+      text-shadow:
+        0 0 8px #dd8745,
+        0 0 25px rgba(190,105,45,.55);
+    }
 
-.x-icon {
-  background: black;
+    .row:nth-child(4) .prize {
+      color: #e49a59;
 
-  font-size: 31px;
+      text-shadow:
+        0 0 7px #e69a55,
+        0 0 18px rgba(205,125,60,.9),
+        0 0 38px rgba(190,105,45,.55);
+    }
 
-  box-shadow:
-    0 0 15px rgba(255,255,255,.2);
-}
 
+    /* =========================
+       SOCIAL
+    ========================= */
 
-/* =========================
-   SNOW
-========================= */
+    .social-section {
+      width: min(700px, 92%);
 
-.snow-layer {
-  position: fixed;
+      margin: 70px auto 0;
 
-  inset: 0;
+      display: flex;
 
-  pointer-events: none;
+      flex-direction: column;
 
-  overflow: hidden;
+      align-items: center;
 
-  z-index: 9999;
-}
+      gap: 18px;
+    }
 
-.snowflake {
-  position: absolute;
+    .queries-title {
+      color: white;
 
-  top: -30px;
+      font-size: 24px;
 
-  color: white;
+      font-weight: 900;
 
-  opacity: .85;
+      margin-bottom: 5px;
 
-  filter:
-    drop-shadow(0 0 5px white);
+      text-shadow:
+        0 0 8px white,
+        0 0 20px rgba(255,255,255,.5);
+    }
 
-  animation:
-    snowfall linear infinite;
-}
+    .social-card {
+      width: 100%;
 
-@keyframes snowfall {
+      padding: 20px 28px;
 
-  0% {
-    transform:
-      translate3d(0,-30px,0)
-      rotate(0deg);
-  }
+      border:
+        1px solid rgba(255,255,255,.10);
 
-  25% {
-    transform:
-      translate3d(35px,28vh,0)
-      rotate(90deg);
-  }
+      border-radius: 22px;
 
-  50% {
-    transform:
-      translate3d(-25px,55vh,0)
-      rotate(180deg);
-  }
+      background:
+        rgba(20,19,29,.80);
 
-  75% {
-    transform:
-      translate3d(30px,80vh,0)
-      rotate(270deg);
-  }
+      display: flex;
 
-  100% {
-    transform:
-      translate3d(-10px,110vh,0)
-      rotate(360deg);
-  }
+      align-items: center;
 
-}
+      gap: 18px;
 
+      color: white;
 
-/* =========================
-   MOBILE
-========================= */
+      text-decoration: none;
 
-@media (max-width: 700px) {
+      font-size: 21px;
 
-  .header {
-    height: 65px;
-    padding: 0 18px;
-  }
+      font-weight: 850;
 
-  .brand {
-    font-size: 18px;
-    gap: 10px;
-  }
+      box-shadow:
+        0 0 25px rgba(120,70,255,.08);
 
-  .brand img {
-    width: 38px;
-    height: 38px;
-  }
+      transition: .2s;
+    }
 
-  .container {
-    width: 94%;
-    padding: 40px 0 60px;
-  }
+    .social-card:hover {
+      transform: translateY(-3px);
 
-  .hero {
-    margin-bottom: 30px;
-  }
+      border-color:
+        rgba(160,100,255,.45);
 
-  .eyebrow {
-    font-size: 10px;
-    letter-spacing: 3px;
-    margin-bottom: 12px;
-  }
+      box-shadow:
+        0 0 25px rgba(130,80,255,.25),
+        0 0 55px rgba(120,70,255,.10);
+    }
 
-  h1 {
-    font-size: 34px;
-    line-height: 1.05;
-    letter-spacing: -1px;
-  }
+    .social-icon {
+      width: 52px;
+      height: 52px;
 
-  .subtitle {
-    font-size: 15px;
-    margin-top: 12px;
-  }
+      border-radius: 50%;
 
+      display: grid;
 
-  /* MOBILE TABLE */
+      place-items: center;
 
-  .table-head,
-  .row {
-    grid-template-columns:
-      48px
-      minmax(0, 1fr)
-      55px
-      85px;
+      flex-shrink: 0;
+    }
 
-    column-gap: 6px;
+    .telegram-icon {
+      background: #229ED9;
 
-    padding-left: 12px;
-    padding-right: 12px;
-  }
+      box-shadow:
+        0 0 15px rgba(34,158,217,.65),
+        0 0 35px rgba(34,158,217,.3);
+    }
 
-  .table-head {
-    min-height: 65px;
+    .telegram-icon svg {
+      width: 29px;
+      height: 29px;
 
-    padding-top: 12px;
-    padding-bottom: 12px;
+      fill: white;
+    }
 
-    font-size: 7px;
+    .x-icon {
+      background: black;
 
-    letter-spacing: 1px;
-  }
+      font-size: 31px;
 
-  .row {
-    min-height: 90px;
+      box-shadow:
+        0 0 15px rgba(255,255,255,.2);
+    }
 
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
 
-  .rank {
-    font-size: 22px;
-  }
+    /* =========================
+       FOOTER
+    ========================= */
 
-  .player {
-    gap: 8px;
+    .site-footer {
+      margin-top: 90px;
 
-    min-width: 0;
-  }
+      padding: 45px 6%;
 
-  .avatar {
-    width: 55px;
-    height: 55px;
+      background:
+        rgba(8,8,14,.92);
 
-    min-width: 55px;
-  }
+      border-top:
+        1px solid rgba(255,255,255,.07);
+    }
 
-  .name {
-    font-size: 17px;
+    .footer-content {
+      max-width: 900px;
 
-    white-space: nowrap;
+      margin: auto;
 
-    overflow: hidden;
+      display: flex;
 
-    text-overflow: ellipsis;
-  }
+      align-items: center;
 
-  .amount {
-    font-size: 15px;
+      justify-content: center;
 
-    white-space: nowrap;
-  }
+      gap: 25px;
+    }
 
-  .prize {
-    font-size: 17px;
+    .footer-content img {
+      width: 90px;
+      height: 90px;
 
-    white-space: nowrap;
-  }
+      border-radius: 50%;
 
+      object-fit: cover;
 
-  /* MOBILE SOCIAL */
+      flex-shrink: 0;
 
-  .social-section {
-    width: 94%;
+      box-shadow:
+        0 0 20px rgba(130,80,255,.35);
+    }
 
-    margin-top: 50px;
-  }
+    .footer-text {
+      color: #aaa7b2;
 
-  .queries-title {
-    font-size: 22px;
-  }
+      font-size: 20px;
 
-  .social-card {
-    padding: 16px 20px;
+      line-height: 1.7;
+    }
 
-    font-size: 18px;
-  }
 
-  .social-icon {
-    width: 48px;
-    height: 48px;
-  }
+    /* =========================
+       SNOW
+    ========================= */
 
-}
+    .snow-layer {
+      position: fixed;
 
-</style>
+      inset: 0;
+
+      pointer-events: none;
+
+      overflow: hidden;
+
+      z-index: 9999;
+    }
+
+    .snowflake {
+      position: absolute;
+
+      top: -30px;
+
+      color: white;
+
+      opacity: .85;
+
+      filter:
+        drop-shadow(0 0 5px white);
+
+      animation:
+        snowfall linear infinite;
+    }
+
+    @keyframes snowfall {
+
+      0% {
+        transform:
+          translate3d(0,-30px,0)
+          rotate(0deg);
+      }
+
+      25% {
+        transform:
+          translate3d(35px,28vh,0)
+          rotate(90deg);
+      }
+
+      50% {
+        transform:
+          translate3d(-25px,55vh,0)
+          rotate(180deg);
+      }
+
+      75% {
+        transform:
+          translate3d(30px,80vh,0)
+          rotate(270deg);
+      }
+
+      100% {
+        transform:
+          translate3d(-10px,110vh,0)
+          rotate(360deg);
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:700px) {
+
+      .header {
+        padding: 0 5%;
+      }
+
+      .container {
+        width: 94%;
+
+        padding:
+          40px 0 60px;
+      }
+
+      h1 {
+        font-size: 39px;
+
+        line-height: 1.05;
+
+        letter-spacing: -1.5px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .countdown {
+        gap: 6px;
+      }
+
+      .count-box {
+        min-width: 65px;
+
+        padding:
+          10px 6px;
+      }
+
+      .count-box span {
+        font-size: 20px;
+      }
+
+      .count-box small {
+        font-size: 7px;
+      }
+
+
+      .table-head,
+      .row {
+        grid-template-columns:
+          55px
+          1fr
+          65px
+          80px;
+
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .table-head {
+        min-height: 65px;
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+      }
+
+      .row {
+        min-height: 90px;
+      }
+
+      .rank {
+        font-size: 25px;
+      }
+
+      .player {
+        gap: 8px;
+      }
+
+      .avatar {
+        width: 55px;
+        height: 55px;
+      }
+
+      .name {
+        font-size: 16px;
+      }
+
+      .amount {
+        font-size: 16px;
+      }
+
+      .prize {
+        font-size: 16px;
+      }
+
+      .social-section {
+        margin-top: 55px;
+      }
+
+      .social-card {
+        padding: 16px;
+
+        font-size: 18px;
+      }
+
+      .social-icon {
+        width: 48px;
+        height: 48px;
+      }
+
+      .site-footer {
+        margin-top: 60px;
+
+        padding:
+          35px 25px;
+      }
+
+      .footer-content {
+        justify-content: flex-start;
+
+        gap: 18px;
+      }
+
+      .footer-content img {
+        width: 65px;
+        height: 65px;
+      }
+
+      .footer-text {
+        font-size: 15px;
+
+        line-height: 1.6;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -681,365 +805,517 @@ h1 {
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-<header class="header">
+  <header class="header">
 
-  <div class="brand">
+    <div class="brand">
 
-    <img
-      src="dean-logo.jpg"
-      alt="DEAN STAKE"
-    >
+      <img
+        src="dean-logo.jpg"
+        alt="DEAN"
+      >
 
-    <span>DEAN</span>
-
-  </div>
-
-</header>
-
-
-
-<!-- =========================
-     MAIN
-========================= -->
-
-<main class="container">
-
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="eyebrow">
-      Monthly Competition
-    </div>
-
-    <h1>
-      $200,000 Monthly Leaderboard
-    </h1>
-
-    <div class="subtitle">
-      1st September to 30th September
-    </div>
-
-  </section>
-
-
-
-  <!-- LEADERBOARD -->
-
-  <section class="board">
-
-
-    <!-- TABLE HEADER -->
-
-    <div class="table-head">
-
-      <div>
-        Rank
-      </div>
-
-      <div>
-        Player Name
-      </div>
-
-      <div>
-        Wagered
-      </div>
-
-      <div>
-        Prize Amount
-      </div>
+      <span>DEAN</span>
 
     </div>
 
-
-
-    <!-- PLAYER 1 -->
-
-    <div class="row">
-
-      <div class="rank">
-        01
-      </div>
-
-      <div class="player">
-
-        <div class="avatar"></div>
-
-        <div class="name">
-          sam
-        </div>
-
-      </div>
-
-      <div class="amount">
-        $10
-      </div>
-
-      <div class="prize">
-        $100,000
-      </div>
-
-    </div>
-
-
-
-    <!-- PLAYER 2 -->
-
-    <div class="row">
-
-      <div class="rank">
-        02
-      </div>
-
-      <div class="player">
-
-        <div class="avatar"></div>
-
-        <div class="name">
-          sus
-        </div>
-
-      </div>
-
-      <div class="amount">
-        $7
-      </div>
-
-      <div class="prize">
-        $50,000
-      </div>
-
-    </div>
-
-
-
-    <!-- PLAYER 3 -->
-
-    <div class="row">
-
-      <div class="rank">
-        03
-      </div>
-
-      <div class="player">
-
-        <div class="avatar"></div>
-
-        <div class="name">
-          kim
-        </div>
-
-      </div>
-
-      <div class="amount">
-        $6
-      </div>
-
-      <div class="prize">
-        $25,000
-      </div>
-
-    </div>
-
-
-
-    <!-- PLAYER 4 -->
-
-    <div class="row">
-
-      <div class="rank">
-        04
-      </div>
-
-      <div class="player">
-
-        <div class="avatar"></div>
-
-        <div class="name">
-          kime
-        </div>
-
-      </div>
-
-      <div class="amount">
-        $5
-      </div>
-
-      <div class="prize">
-        $15,000
-      </div>
-
-    </div>
-
-
-
-    <!-- PLAYER 5 -->
-
-    <div class="row">
-
-      <div class="rank">
-        05
-      </div>
-
-      <div class="player">
-
-        <div class="avatar"></div>
-
-        <div class="name">
-          kite
-        </div>
-
-      </div>
-
-      <div class="amount">
-        $4
-      </div>
-
-      <div class="prize">
-        $10,000
-      </div>
-
-    </div>
-
-
-  </section>
-
+  </header>
 
 
   <!-- =========================
-       SOCIAL / QUESTIONS
+       MAIN
   ========================= -->
 
-  <section class="social-section">
+  <main class="container">
 
 
-    <div class="queries-title">
-      Queries?
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="eyebrow">
+        Monthly Competition
+      </div>
+
+      <h1>
+        $200,000 Monthly Leaderboard
+      </h1>
+
+      <div class="subtitle">
+        1st September to 30th September
+      </div>
+
+
+      <!-- COUNTDOWN -->
+
+      <div class="countdown">
+
+        <div class="count-box">
+          <span id="days">00</span>
+          <small>DAYS</small>
+        </div>
+
+        <div class="count-box">
+          <span id="hours">00</span>
+          <small>HOURS</small>
+        </div>
+
+        <div class="count-box">
+          <span id="minutes">00</span>
+          <small>MINUTES</small>
+        </div>
+
+        <div class="count-box">
+          <span id="seconds">00</span>
+          <small>SECONDS</small>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         LEADERBOARD
+    ========================= -->
+
+    <section class="board">
+
+
+      <!-- TABLE HEADER -->
+
+      <div class="table-head">
+
+        <div>Rank</div>
+
+        <div>Player Name</div>
+
+        <div>Wagered</div>
+
+        <div>Prize Amount</div>
+
+      </div>
+
+
+      <!-- PLAYER 1 -->
+
+      <div class="row">
+
+        <div class="rank">
+          01
+        </div>
+
+        <div class="player">
+
+          <div class="avatar"></div>
+
+          <div class="name">
+            sam
+          </div>
+
+        </div>
+
+        <div class="amount">
+          $10
+        </div>
+
+        <div class="prize">
+          $100,000
+        </div>
+
+      </div>
+
+
+      <!-- PLAYER 2 -->
+
+      <div class="row">
+
+        <div class="rank">
+          02
+        </div>
+
+        <div class="player">
+
+          <div class="avatar"></div>
+
+          <div class="name">
+            sus
+          </div>
+
+        </div>
+
+        <div class="amount">
+          $7
+        </div>
+
+        <div class="prize">
+          $50,000
+        </div>
+
+      </div>
+
+
+      <!-- PLAYER 3 -->
+
+      <div class="row">
+
+        <div class="rank">
+          03
+        </div>
+
+        <div class="player">
+
+          <div class="avatar"></div>
+
+          <div class="name">
+            kim
+          </div>
+
+        </div>
+
+        <div class="amount">
+          $6
+        </div>
+
+        <div class="prize">
+          $25,000
+        </div>
+
+      </div>
+
+
+      <!-- PLAYER 4 -->
+
+      <div class="row">
+
+        <div class="rank">
+          04
+        </div>
+
+        <div class="player">
+
+          <div class="avatar"></div>
+
+          <div class="name">
+            kime
+          </div>
+
+        </div>
+
+        <div class="amount">
+          $5
+        </div>
+
+        <div class="prize">
+          $15,000
+        </div>
+
+      </div>
+
+
+      <!-- PLAYER 5 -->
+
+      <div class="row">
+
+        <div class="rank">
+          05
+        </div>
+
+        <div class="player">
+
+          <div class="avatar"></div>
+
+          <div class="name">
+            kite
+          </div>
+
+        </div>
+
+        <div class="amount">
+          $4
+        </div>
+
+        <div class="prize">
+          $10,000
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =========================
+         SOCIAL
+    ========================= -->
+
+    <section class="social-section">
+
+
+      <div class="queries-title">
+        Queries?
+      </div>
+
+
+      <!-- TELEGRAM -->
+
+      <a
+        class="social-card"
+        href="https://t.me/deanstake"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span
+          class="social-icon telegram-icon"
+          aria-label="Telegram"
+        >
+
+          <svg viewBox="0 0 24 24">
+
+            <path d="M21.6 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.03-3.71-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.35-8.45c.41-.36-.09-.56-.64-.2L5.4 13.48.46 11.93c-1.08-.34-1.1-1.08.23-1.6L20 2.83c.9-.34 1.69.2 1.6.67Z"/>
+
+          </svg>
+
+        </span>
+
+        <span>
+          @deanstake
+        </span>
+
+      </a>
+
+
+      <!-- X -->
+
+      <a
+        class="social-card"
+        href="https://x.com/deanstake"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <span
+          class="social-icon x-icon"
+          aria-label="X"
+        >
+          𝕏
+        </span>
+
+        <span>
+          @deanstake
+        </span>
+
+      </a>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer class="site-footer">
+
+    <div class="footer-content">
+
+      <img
+        src="dean-logo.jpg"
+        alt="DEAN"
+      >
+
+      <div class="footer-text">
+
+        <div>
+          © Copyright 2026 DeanStake.com
+        </div>
+
+        <div>
+          All rights reserved
+        </div>
+
+      </div>
+
     </div>
 
-
-    <!-- TELEGRAM -->
-
-    <a
-      class="social-card"
-      href="https://t.me/deanstake"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <span
-        class="social-icon telegram-icon"
-        aria-label="Telegram"
-      >
-
-        <svg viewBox="0 0 24 24">
-
-          <path d="M21.6 3.5 18.2 20c-.25 1.17-.9 1.46-1.83.91l-5.03-3.71-2.43 2.34c-.27.27-.5.5-1.02.5l.36-5.13 9.35-8.45c.41-.36-.09-.56-.64-.2L5.4 13.48.46 11.93c-1.08-.34-1.1-1.08.23-1.6L20 2.83c.9-.34 1.69.2 1.6.67Z"/>
-
-        </svg>
-
-      </span>
-
-      <span>
-        @deanstake
-      </span>
-
-    </a>
+  </footer>
 
 
+  <!-- =========================
+       SNOW
+  ========================= -->
 
-    <!-- X -->
-
-    <a
-      class="social-card"
-      href="https://x.com/deanstake"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-
-      <span
-        class="social-icon x-icon"
-        aria-label="X"
-      >
-        𝕏
-      </span>
-
-      <span>
-        @deanstake
-      </span>
-
-    </a>
+  <div
+    class="snow-layer"
+    id="snowLayer"
+  ></div>
 
 
-  </section>
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
 
 
-</main>
+    /* =========================
+       REAL COUNTDOWN
+    ========================= */
+
+    const competitionEnd =
+      new Date("2026-09-30T23:59:59").getTime();
 
 
+    function updateCountdown() {
 
-<!-- =========================
-     SNOW
-========================= -->
+      const now =
+        new Date().getTime();
 
-<div
-  class="snow-layer"
-  id="snowLayer"
-></div>
+      const distance =
+        competitionEnd - now;
 
 
+      if (distance <= 0) {
 
-<script>
+        document.getElementById("days").textContent = "00";
 
-const snowLayer =
-  document.getElementById("snowLayer");
+        document.getElementById("hours").textContent = "00";
 
-const snowCount = 75;
+        document.getElementById("minutes").textContent = "00";
+
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+
+      }
 
 
-for (
-  let i = 0;
-  i < snowCount;
-  i++
-) {
+      const days =
+        Math.floor(
+          distance / (1000 * 60 * 60 * 24)
+        );
 
-  const snow =
-    document.createElement("span");
 
-  snow.className =
-    "snowflake";
+      const hours =
+        Math.floor(
+          (distance %
+            (1000 * 60 * 60 * 24))
+          /
+          (1000 * 60 * 60)
+        );
 
-  snow.textContent =
-    Math.random() > .25
-      ? "•"
-      : "❄";
 
-  snow.style.left =
-    Math.random() * 100 + "vw";
+      const minutes =
+        Math.floor(
+          (distance %
+            (1000 * 60 * 60))
+          /
+          (1000 * 60)
+        );
 
-  snow.style.fontSize =
-    3 + Math.random() * 8 + "px";
 
-  snow.style.opacity =
-    .25 + Math.random() * .65;
+      const seconds =
+        Math.floor(
+          (distance %
+            (1000 * 60))
+          /
+          1000
+        );
 
-  snow.style.animationDuration =
-    7 + Math.random() * 13 + "s";
 
-  snow.style.animationDelay =
-    -Math.random() * 18 + "s";
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
 
-  snowLayer.appendChild(snow);
 
-}
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
 
-</script>
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+    }
+
+
+    updateCountdown();
+
+
+    setInterval(
+      updateCountdown,
+      1000
+    );
+
+
+    /* =========================
+       SNOW
+    ========================= */
+
+    const snowLayer =
+      document.getElementById("snowLayer");
+
+
+    const snowCount = 75;
+
+
+    for (
+      let i = 0;
+      i < snowCount;
+      i++
+    ) {
+
+      const snow =
+        document.createElement("span");
+
+
+      snow.className =
+        "snowflake";
+
+
+      snow.textContent =
+        Math.random() > .25
+          ? "•"
+          : "❄";
+
+
+      snow.style.left =
+        Math.random() * 100 + "vw";
+
+
+      snow.style.fontSize =
+        3 + Math.random() * 8 + "px";
+
+
+      snow.style.opacity =
+        .25 + Math.random() * .65;
+
+
+      snow.style.animationDuration =
+        7 + Math.random() * 13 + "s";
+
+
+      snow.style.animationDelay =
+        -Math.random() * 18 + "s";
+
+
+      snowLayer.appendChild(snow);
+
+    }
+
+
+  </script>
 
 
 </body>
+
 </html>
